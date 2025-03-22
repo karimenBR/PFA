@@ -1,5 +1,5 @@
 import torch
-from models.cnn_model import CNN
+from Model.resnet_model  import ResNet  # Updated import
 from utils.data_loader import get_data_loaders
 
 def test_model():
@@ -10,8 +10,8 @@ def test_model():
 
     # Load the trained model
     num_classes = len(test_loader.dataset.info['label'])
-    model = CNN(num_classes=num_classes).to(device)
-    model.load_state_dict(torch.load("saved_models/chestmnist_cnn.pth"))
+    model = ResNet(num_classes=num_classes).to(device)  # Use ResNet instead of CNN
+    model.load_state_dict(torch.load("saved_models/chestmnist_resnet.pth"))  # Updated model name
 
     # Evaluate the model
     model.eval()

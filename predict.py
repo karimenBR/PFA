@@ -1,7 +1,7 @@
 import torch
 from torchvision import transforms
 from PIL import Image
-from Model.cnn_model import CNN
+from Model.resnet_model import ResNet
 
 def predict(image_path):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -16,8 +16,8 @@ def predict(image_path):
     image = transform(image).unsqueeze(0).to(device)
 
     # Load the trained model
-    model = CNN(num_classes=14).to(device)  # Adjust num_classes as needed
-    model.load_state_dict(torch.load("saved_models/chestmnist_cnn.pth"))
+    model = ResNet(num_classes=14).to(device)  # Use ResNet instead of CNN
+    model.load_state_dict(torch.load("saved_models/chestmnist_resnet.pth"))  # Updated model name
 
     # Make a prediction
     model.eval()
