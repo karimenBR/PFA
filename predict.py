@@ -1,7 +1,7 @@
 import torch
 from torchvision import transforms
 from PIL import Image
-from Model.resnet_model import ResNet
+from Model.resnet18_model import ResNet
 
 def predict(image_path):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import threading
 import torch
-from Model.resnet_model import ResNet
+from Model.resnet18_model import ResNet
 from utils.data_loader import get_data_loaders
 from utils.visualize import visualize_predictions
 

@@ -4,10 +4,11 @@ import torch.optim as optim
 from torch.optim.lr_scheduler import MultiStepLR
 from sklearn.metrics import roc_auc_score  # For AUC calculation
 import numpy as np
-from Model.resnet_model import ResNet
+from Model.resnet18_model import ResNet
 from utils.data_loader import get_data_loaders
 from utils.visualize import visualize_predictions
 
+torch._dynamo.config.suppress_errors = True  # Disable Dynamo errors
 def getAUC(y_true, y_score, task):
     """AUC metric.
     :param y_true: the ground truth labels, shape: (n_samples, n_labels) or (n_samples,) if n_labels==1
@@ -134,15 +135,15 @@ def train_model(num_epochs=100, batch_size=128, learning_rate=0.001):
         print(f"Validation AUC: {auc:.4f}")
 
         # Early stopping
-        if val_accuracy > best_val_accuracy:
-            best_val_accuracy = val_accuracy
-            patience_counter = 0  # Reset patience counter
-            torch.save(model.state_dict(), "saved_models/best_chestmnist_resnet.pth")  # Save best model
-        else:
-            patience_counter += 1
-            if patience_counter >= patience:
-                print("Early stopping triggered.")
-                break
+        #if val_accuracy > best_val_accuracy:
+         #   best_val_accuracy = val_accuracy
+         #   patience_counter = 0  # Reset patience counter
+         #   torch.save(model.state_dict(), "saved_models/best_chestmnist_resnet.pth")  # Save best model
+        #else:
+           # patience_counter += 1
+            #if patience_counter >= patience:
+              #  print("Early stopping triggered.")
+               # break
 
         # Step the scheduler
         scheduler.step()

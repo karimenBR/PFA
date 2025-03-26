@@ -1,5 +1,5 @@
 import torch
-from Model.resnet_model  import ResNet  # Updated import
+from Model.resnet18_model  import ResNet  # Updated import
 from utils.data_loader import get_data_loaders
 
 def test_model():

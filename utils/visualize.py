@@ -1,5 +1,5 @@
+import torch
 import matplotlib.pyplot as plt
-from torch._dynamo.variables import torch
 
 
 def visualize_predictions(model, test_loader, device, num_images=5):
@@ -7,7 +7,7 @@ def visualize_predictions(model, test_loader, device, num_images=5):
     images, labels = next(iter(test_loader))
     images, labels = images.to(device), labels.to(device)
 
-    with torch.no_grad():
+    with torch.no_grad():  # Now this will work
         outputs = model(images)
         _, predicted = torch.max(outputs, 1)
 
