@@ -2,7 +2,7 @@ from torchvision import transforms
 from medmnist import ChestMNIST
 from torch.utils.data import DataLoader
 
-def get_data_loaders(batch_size=128):
+def get_data_loaders(batch_size=64):
     # Define transformations for training data (with augmentation)
     train_transform = transforms.Compose([
         transforms.Resize((224, 224)),

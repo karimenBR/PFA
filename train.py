@@ -8,7 +8,7 @@ from Model.resnet18_model import ResNet
 from utils.data_loader import get_data_loaders
 from utils.visualize import visualize_predictions
 
-torch._dynamo.config.suppress_errors = True  # Disable Dynamo errors
+#torch._dynamo.config.suppress_errors = True  # Disable Dynamo errors
 def getAUC(y_true, y_score, task):
     """AUC metric.
     :param y_true: the ground truth labels, shape: (n_samples, n_labels) or (n_samples,) if n_labels==1
@@ -41,7 +41,7 @@ def getAUC(y_true, y_score, task):
 
     return ret
 
-def train_model(num_epochs=100, batch_size=128, learning_rate=0.001):
+def train_model(num_epochs=10, batch_size=64, learning_rate=0.001):
     print("Initializing training...")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"CUDA available: {torch.cuda.is_available()}")
@@ -60,14 +60,15 @@ def train_model(num_epochs=100, batch_size=128, learning_rate=0.001):
     optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-4)  # Weight decay
 
     # Define milestones and gamma for MultiStepLR
-    milestones = [30, 60, 90]  # Epochs at which to reduce the learning rate
+    milestones = [3, 6, 9]  # Epochs at which to reduce the learning rate
     gamma = 0.1  # Factor by which the learning rate is reduced
     scheduler = MultiStepLR(optimizer, milestones=milestones, gamma=gamma)  # MultiStepLR scheduler
+
     print("Model initialized.")
 
     # Early stopping
     best_val_accuracy = 0
-    patience = 3  # Number of epochs to wait for improvement
+    patience = 10  # Number of epochs to wait for improvement
     patience_counter = 0
 
     # Training loop
