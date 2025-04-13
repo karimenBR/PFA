@@ -1,19 +1,18 @@
-import torch
 import matplotlib.pyplot as plt
+import numpy as np
+import torchvision
 
-
-def visualize_predictions(model, test_loader, device, num_images=5):
-    model.eval()
-    images, labels = next(iter(test_loader))
-    images, labels = images.to(device), labels.to(device)
-
-    with torch.no_grad():  # Now this will work
-        outputs = model(images)
-        _, predicted = torch.max(outputs, 1)
-
-    fig, axes = plt.subplots(1, num_images, figsize=(15, 3))
-    for i in range(num_images):
-        axes[i].imshow(images[i].cpu().squeeze(), cmap='gray')
-        axes[i].set_title(f"Pred: {predicted[i].item()}, True: {labels[i].item()}")
-        axes[i].axis('off')
+def imshow(img, title=None):
+    img = img / 2 + 0.5  # Unnormalize
+    npimg = img.numpy()
+    plt.imshow(np.transpose(npimg, (1, 2, 0)), cmap='gray')
+    if title:
+        plt.title(title)
     plt.show()
+
+def show_batch(loader, classes):
+    data_iter = iter(loader)
+    images, labels = next(data_iter)
+    imshow(torchvision.utils.make_grid(images))
+    print(' '.join(f'{classes[labels[j]]}' for j in range(len(labels))))
+

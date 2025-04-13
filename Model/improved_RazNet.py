@@ -105,7 +105,7 @@ class ImprovedResNet(nn.Module):
 
 # Example usage
 if __name__ == "__main__":
-    model = ImprovedResNet(num_classes=10)
+    model = ImprovedResNet(num_classes=14)
     print(model)
 
     # Test forward pass
