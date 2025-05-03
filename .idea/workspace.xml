@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="726a8ba7-9526-4719-952e-5310543c61ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GUI/login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/register.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/DesktopInterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/DesktopInterface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/courbes.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/courbes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/patient_records.json" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/patient_records.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/rasnet34.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/rasnet34.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/best_model.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_GPU_VENV.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train34.py" beforeDir="false" afterPath="$PROJECT_DIR$/train34.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +44,7 @@
     "Python.improved_train.executor": "Run",
     "Python.login.executor": "Run",
     "Python.rasnet34.executor": "Run",
+    "Python.register.executor": "Run",
     "Python.test.executor": "Run",
     "Python.test34.executor": "Run",
     "Python.train.executor": "Run",
@@ -192,7 +186,7 @@
       <workItem from="1745656302156" duration="125000" />
       <workItem from="1745863979884" duration="14561000" />
       <workItem from="1746032011550" duration="1592000" />
-      <workItem from="1746268130986" duration="7378000" />
+      <workItem from="1746268130986" duration="12121000" />
     </task>
     <servers />
   </component>
@@ -201,6 +195,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PFA$train34.coverage" NAME="train34 Coverage Results" MODIFIED="1745152107152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PFA$register.coverage" NAME="register Coverage Results" MODIFIED="1746308769018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/PFA$train_GPU.coverage" NAME="train_GPU Coverage Results" MODIFIED="1743024596114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PFA$data_loader.coverage" NAME="data_loader Coverage Results" MODIFIED="1743629851946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/PFA$rasnet34.coverage" NAME="rasnet34 Coverage Results" MODIFIED="1744462282783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
@@ -208,7 +203,7 @@
     <SUITE FILE_PATH="coverage/PFA$test.coverage" NAME="test Coverage Results" MODIFIED="1744472966411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/PFA$improved_train.coverage" NAME="improved_train Coverage Results" MODIFIED="1743622882718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PFA$courbes.coverage" NAME="courbes Coverage Results" MODIFIED="1745864015896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
-    <SUITE FILE_PATH="coverage/PFA$login.coverage" NAME="login Coverage Results" MODIFIED="1746294478093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
+    <SUITE FILE_PATH="coverage/PFA$login.coverage" NAME="login Coverage Results" MODIFIED="1746308539400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/PFA$visualize.coverage" NAME="visualize Coverage Results" MODIFIED="1742669709223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/PFA$test34.coverage" NAME="test34 Coverage Results" MODIFIED="1745864100760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PFA$train.coverage" NAME="train Coverage Results" MODIFIED="1743188875638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
