@@ -1,5 +1,7 @@
+import torch
 import torch.nn as nn
 import torchvision.models as models
+from torch import optim
 from torchvision.models import ResNet34_Weights
 
 class ResNet(nn.Module):

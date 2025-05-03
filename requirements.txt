@@ -1,6 +1,9 @@
 torch
-torchvision
+torchvision~=0.15.2
 torchaudio
-medmnist
-matplotlib
-pillow
+medmnist~=3.0.2
+matplotlib~=3.7.1
+pillow~=11.1.0
+numpy~=1.23.5
+scikit-learn~=1.6.1
+tkinterdnd2~=0.4.3

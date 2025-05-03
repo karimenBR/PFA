@@ -5,6 +5,7 @@ from Model.rasnet34 import ResNet
 from utils.data_loader import get_data_loaders
 from medmnist import INFO
 
+
 def train(model, train_loader, val_loader, device, num_epochs=10, lr=0.001):
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=lr)

@@ -1,1 +1,42 @@
-[]
+[
+    {
+        "first_name": "flena ",
+        "last_name": "ben flen",
+        "dob": "1999-03-12",
+        "gender": "Female",
+        "image_path": "C:/Users/karim/MedMNIST/chest_images2/train_image_64044.png",
+        "prediction": "Infiltration",
+        "confidence": "72.56%",
+        "analysis_date": "2025-04-20 17:56:15"
+    },
+    {
+        "first_name": "flen",
+        "last_name": "ben flen",
+        "dob": "1999-03-1",
+        "gender": "Male",
+        "image_path": "C:/Users/karim/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/2BB0502C80B7432EEE4C5847A5FD077B/WhatsApp Image 2025-04-26 at 09.32.54_12d7b9fa.jpg",
+        "prediction": "Pneumothorax",
+        "confidence": "77.74%",
+        "analysis_date": "2025-04-26 09:33:11"
+    },
+    {
+        "first_name": "flana6",
+        "last_name": "bent flen",
+        "dob": "1987-03-12",
+        "gender": "Female",
+        "image_path": "C:/Users/karim/MedMNIST/chest_images2/test_image_18.png",
+        "prediction": "Pneumothorax",
+        "confidence": "99.93%",
+        "analysis_date": "2025-04-30 17:56:02"
+    },
+    {
+        "first_name": "madameA",
+        "last_name": "ABC",
+        "dob": "1998-04-02",
+        "gender": "Female",
+        "image_path": "C:/Users/karim/MedMNIST/chest_images2/train_image_33378.png",
+        "prediction": "Atelectasis",
+        "confidence": "99.96%",
+        "analysis_date": "2025-05-03 11:36:29"
+    }
+]

@@ -26,6 +26,7 @@ class MedicalAnalysisApp(TkinterDnD.Tk):
         self.patient_data = {
             "first_name": tk.StringVar(),
             "last_name": tk.StringVar(),
+            "CIN": tk.StringVar(),
             "dob": tk.StringVar(),
             "gender": tk.StringVar(value="Male"),
             "image_path": "",
@@ -83,13 +84,16 @@ class MedicalAnalysisApp(TkinterDnD.Tk):
         ttk.Label(info_frame, text="Last Name:").grid(row=1, column=0, sticky="w", pady=5)
         ttk.Entry(info_frame, textvariable=self.patient_data["last_name"], width=30).grid(row=1, column=1, pady=5)
 
-        ttk.Label(info_frame, text="Date of Birth (YYYY-MM-DD):").grid(row=2, column=0, sticky="w", pady=5)
-        ttk.Entry(info_frame, textvariable=self.patient_data["dob"], width=30).grid(row=2, column=1, pady=5)
+        ttk.Label(info_frame, text="CIN:").grid(row=2, column=0, sticky="w", pady=5)
+        ttk.Entry(info_frame, textvariable=self.patient_data["CIN"], width=30).grid(row=2, column=1, pady=5)
 
-        ttk.Label(info_frame, text="Gender:").grid(row=3, column=0, sticky="w", pady=5)
+        ttk.Label(info_frame, text="Date of Birth (YYYY-MM-DD):").grid(row=3, column=0, sticky="w", pady=5)
+        ttk.Entry(info_frame, textvariable=self.patient_data["dob"], width=30).grid(row=3, column=1, pady=5)
+
+        ttk.Label(info_frame, text="Gender:").grid(row=4, column=0, sticky="w", pady=5)
         gender_combo = ttk.Combobox(info_frame, textvariable=self.patient_data["gender"],
                                     values=["Male", "Female", "Other"], width=27, state="readonly")
-        gender_combo.grid(row=3, column=1, pady=5)
+        gender_combo.grid(row=4, column=1, pady=5)
 
         # Right panel - Image Analysis
         analysis_frame = ttk.LabelFrame(main_frame, text="Image Analysis", padding=15)
@@ -226,16 +230,18 @@ class MedicalAnalysisApp(TkinterDnD.Tk):
             messagebox.showerror("Error", f"Analysis failed: {str(e)}")
 
     def preprocess_image(self, image):
-        # Convert to RGB if not already
-        if image.mode != 'RGB':
-            image = image.convert('RGB')
+        # Convert to grayscale if not already
+        if image.mode != 'L':
+            image = image.convert('L')
 
-        # Resize and normalize
+        # Convert to tensor and add single channel dimension
         transform = transforms.Compose([
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+            transforms.Normalize(mean=[0.5], std=[0.5])  # For single channel
         ])
+
+        return transform(image).unsqueeze(0)  # Add batch dimension
 
         return transform(image).unsqueeze(0)
 
