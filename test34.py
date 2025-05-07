@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     # Load your trained model (make sure to save it first!)
     model = ResNet(num_classes=14)
-    model.load_state_dict(torch.load("C:\\Users\karim\PycharmProjects\PFA\saved_models\chestmnist_resnet34.pth", map_location=device))
+    model.load_state_dict(torch.load("/GUI/saved_models/chestmnist_resnet34.pth", map_location=device))
     model.to(device)
 
     test(model, test_loader, device)

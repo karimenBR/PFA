@@ -38,5 +38,15 @@
         "prediction": "Atelectasis",
         "confidence": "99.96%",
         "analysis_date": "2025-05-03 11:36:29"
+    },
+    {
+        "first_name": "amira",
+        "last_name": "amoura",
+        "dob": "2002-03-02",
+        "gender": "Female",
+        "image_path": "C:/Users/karim/MedMNIST/chest_images2/test_image_10086.png",
+        "prediction": "Pleural Thickening",
+        "confidence": "75.93%",
+        "analysis_date": "2025-05-03 23:02:42"
     }
 ]

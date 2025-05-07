@@ -46,7 +46,7 @@ def evaluate(model, data_loader, device):
             total += labels.numel()
 
     print(f"Validation Accuracy (per label): {(100 * correct / total):.2f}%")
-    torch.save(model.state_dict(), "saved_models/chestmnist_resnet34.pth")
+    torch.save(model.state_dict(), "GUI/saved_models/chestmnist_resnet34.pth")
 
 if __name__ == "__main__":
     num_epochs = 10
