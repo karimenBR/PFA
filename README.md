@@ -1,6 +1,3 @@
-Here’s a suggested README for your repository:
-
----
 
 # PFA: Deep Learning for Chest Disease Detection
 
